@@ -7,6 +7,7 @@ from dataclasses import dataclass
 
 from src.logger import logging
 from src.exception import CustomException
+from src.components.data_preprocessing import DataPreprocessing
 
 @dataclass
 class DataIngestionConfig():
@@ -63,6 +64,10 @@ class DataIngestion():
 
 if __name__ == "__main__":
 
-    obj = DataIngestion()
-    train_path, test_path = obj.initiate_data_ingestion()
+    ingestion_obj = DataIngestion()
+    train_path, test_path = ingestion_obj.initiate_data_ingestion()
     print(train_path, test_path)
+
+    preprocessing_obj = DataPreprocessing()
+    new_train_path , new_test_path = preprocessing_obj.initiate_data_preprocessing(train_path, test_path)
+    print(new_train_path, new_test_path)
