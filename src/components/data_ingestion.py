@@ -9,6 +9,7 @@ from src.logger import logging
 from src.exception import CustomException
 from src.components.data_preprocessing import DataPreprocessing
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig():
@@ -79,6 +80,10 @@ if __name__ == "__main__":
     print("\ntrain array=",train_arr)
     print("\ntest array=",test_arr)
     print("\nobj path=", obj_path)
+
+    model_trainer = ModelTrainer()
+    print('MOdel Trainer')
+    print(model_trainer.initiate_model_trainer(train_arr, test_arr))
 
 
 
