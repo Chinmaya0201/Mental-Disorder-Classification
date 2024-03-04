@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from src.logger import logging
 from src.exception import CustomException
 from src.components.data_preprocessing import DataPreprocessing
+from src.components.data_transformation import DataTransformation
 
 @dataclass
 class DataIngestionConfig():
@@ -71,3 +72,13 @@ if __name__ == "__main__":
     preprocessing_obj = DataPreprocessing()
     new_train_path , new_test_path = preprocessing_obj.initiate_data_preprocessing(train_path, test_path)
     print(new_train_path, new_test_path)
+
+    data_transformation = DataTransformation()
+    train_arr, test_arr, obj_path = data_transformation.initiate_data_transformation(new_train_path, new_test_path)
+    print('data transformation')
+    print("\ntrain array=",train_arr)
+    print("\ntest array=",test_arr)
+    print("\nobj path=", obj_path)
+
+
+
