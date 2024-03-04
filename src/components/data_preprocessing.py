@@ -10,13 +10,14 @@ from sklearn.preprocessing import LabelEncoder
 
 from src.logger import logging 
 from src.exception import CustomException 
-from src.utils import convert_to_number_string, convert_to_number_yes_no
+from src.utils import convert_to_number_string, convert_to_number_yes_no, save_object
 
 @dataclass
 class DataPreprocessingConfig():
 
     train_data_processed_path : str = os.path.join('artifacts','train_processed.csv')
     test_data_processed_path : str = os.path.join('artifacts','test_processed.csv')
+    label_encoder_path : str = os.path.join('artifacts','label_encoder.pkl')
 
 class DataPreprocessing():
 
@@ -72,6 +73,8 @@ class DataPreprocessing():
             test_df.to_csv(self.data_preprocessing_config.test_data_processed_path, index= False, header= True)
 
             logging.info('Saved train and test dataframe into csv files')
+
+            save_object(self.data_preprocessing_config.label_encoder_path, label_encoder)
 
             return (
                 self.data_preprocessing_config.train_data_processed_path,
