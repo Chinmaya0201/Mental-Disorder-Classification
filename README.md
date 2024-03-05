@@ -21,6 +21,8 @@ Libraries Used -
 3. Scaled the data using **Standard Scaler** before feeding in into the model.
 4. Since this was a classification problem I used 4 models Decision Tree, Random Forest, KNN and GaussianNB and after evaluating them on test data found the best model which gave the highest accuracy.
 
+#### Best Model - Random Forest with accuracy of 84%
+
 
 ### Stage 2 Modular Coding
 
