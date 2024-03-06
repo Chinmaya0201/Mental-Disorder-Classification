@@ -2,6 +2,6 @@ numpy
 pandas
 seaborn
 matplotlib
-scikit-learn
+scikit-learn==1.2.2
 dill
 streamlit
