@@ -43,6 +43,7 @@ I also saved the required object such as the trained model object, preprocessor 
 - Last step was to make a frontend application which could be used by user to interact with project. I used streamlit framework to developed this application. [App Source Code](https://github.com/Chinmaya0201/Mental-Disorder-Classification/blob/main/app.py)
 
 - The app is deployed on Streamlit Community Server
+- [Working App Link](https://mental-disorder-classification-f3bzcnjmsappgroqm3wxpfk.streamlit.app/)
 
 
 
